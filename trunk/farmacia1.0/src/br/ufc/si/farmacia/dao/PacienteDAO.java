@@ -9,6 +9,8 @@ import br.ufc.si.farmacia.model.Paciente;
 
 public class PacienteDAO implements IPacienteDAO {
 
+	
+	
 	@Override
 	public void inserirPaciente(Paciente paciente) {
 		Session sessao = HibernateUtil.getSession();
