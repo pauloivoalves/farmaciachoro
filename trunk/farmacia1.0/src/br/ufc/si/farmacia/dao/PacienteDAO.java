@@ -25,7 +25,6 @@ public class PacienteDAO implements IPacienteDAO {
 		} finally {
 			sessao.close();
 		}
-
 	}// fim do método inserir paciente
 
 	@Override
