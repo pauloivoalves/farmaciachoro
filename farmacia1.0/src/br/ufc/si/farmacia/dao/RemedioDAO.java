@@ -14,10 +14,8 @@ public class RemedioDAO implements IRemedioDAO {
 
 	@Override
 	public void InserirRemedio(Remedio remedio) {
-
 		Session sessao = HibernateUtil.getSession();
 		Transaction txt = sessao.beginTransaction();
-
 		try {
 			sessao.save(remedio);
 			txt.commit();
