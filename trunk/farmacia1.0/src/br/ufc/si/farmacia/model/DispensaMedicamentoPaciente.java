@@ -2,7 +2,7 @@ package br.ufc.si.farmacia.model;
 
 import java.util.Date;
 
-public class DispensaPaciente {
+public class DispensaMedicamentoPaciente {
  private int id;
  private String crm_medico;
  private String tipo_medicamento;
@@ -11,10 +11,16 @@ public class DispensaPaciente {
  private Date data_dispensa;
  private Date data_retorno;
  private Paciente paciente;
+ private Remedio remedio;
  
  
  
- 
+public Remedio getRemedio() {
+	return remedio;
+}
+public void setRemedio(Remedio remedio) {
+	this.remedio = remedio;
+}
 public int getId() {
 	return id;
 }
@@ -63,6 +69,25 @@ public Paciente getPaciente() {
 public void setPaciente(Paciente paciente) {
 	this.paciente = paciente;
 }
+public DispensaMedicamentoPaciente() {
+	super();
+}
+public DispensaMedicamentoPaciente(int id, String crm_medico,
+		String tipo_medicamento, String tipo_saida, int quant_saida,
+		Date data_dispensa, Date data_retorno, Paciente paciente,
+		Remedio remedio) {
+	super();
+	this.id = id;
+	this.crm_medico = crm_medico;
+	this.tipo_medicamento = tipo_medicamento;
+	this.tipo_saida = tipo_saida;
+	this.quant_saida = quant_saida;
+	this.data_dispensa = data_dispensa;
+	this.data_retorno = data_retorno;
+	this.paciente = paciente;
+	this.remedio = remedio;
+}
  
+
  
 }//fim da classe dispensa Paciente

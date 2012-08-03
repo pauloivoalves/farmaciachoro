@@ -30,7 +30,7 @@
 <mapping resource="br/ufc/si/farmacia/dao/map/Paciente.hbm.xml"/>
 <mapping resource="br/ufc/si/farmacia/dao/map/Unidade.hbm.xml"/>
 <mapping resource="br/ufc/si/farmacia/dao/map/Remedio.hbm.xml"/>
-
+<mapping resource="br/ufc/si/farmacia/dao/map/DispensaMedicamentoPaciente.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>
