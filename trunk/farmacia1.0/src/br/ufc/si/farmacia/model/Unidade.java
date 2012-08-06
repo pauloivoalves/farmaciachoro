@@ -5,6 +5,17 @@ public class Unidade {
 	private String nome;
 	private String nome_responsavel;
 
+	public Unidade() {
+			super();
+		}
+		
+	public Unidade(int id, String nome, String nome_responsavel) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.nome_responsavel = nome_responsavel;
+	}
+
 	// método get e set
 	public int getId() {
 		return id;
@@ -30,9 +41,6 @@ public class Unidade {
 		this.nome_responsavel = nome_responsavel;
 	}
 
-	// construtor
-	public Unidade() {
-		super();
-	}
+	
 
 }// fim da classe unidade

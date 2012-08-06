@@ -1,6 +1,5 @@
 package br.ufc.si.farmacia.model;
 
-import java.text.DecimalFormat;
 import java.util.Date;
 
 public class Remedio {
