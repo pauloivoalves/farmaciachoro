@@ -11,15 +11,16 @@ public class DispensaMedicamentoPaciente {
  private Date data_dispensa;
  private Date data_retorno;
  private Paciente paciente;
- private Remedio remedio;
+ private Medicamento medicamento;
  
  
  
-public Remedio getRemedio() {
-	return remedio;
+
+public Medicamento getMedicamento() {
+	return medicamento;
 }
-public void setRemedio(Remedio remedio) {
-	this.remedio = remedio;
+public void setMedicamento(Medicamento medicamento) {
+	this.medicamento = medicamento;
 }
 public int getId() {
 	return id;
@@ -69,13 +70,18 @@ public Paciente getPaciente() {
 public void setPaciente(Paciente paciente) {
 	this.paciente = paciente;
 }
+
+
+//construtores da classe
+
+
 public DispensaMedicamentoPaciente() {
 	super();
 }
 public DispensaMedicamentoPaciente(int id, String crm_medico,
 		String tipo_medicamento, String tipo_saida, int quant_saida,
 		Date data_dispensa, Date data_retorno, Paciente paciente,
-		Remedio remedio) {
+		Medicamento medicamento) {
 	super();
 	this.id = id;
 	this.crm_medico = crm_medico;
@@ -85,8 +91,9 @@ public DispensaMedicamentoPaciente(int id, String crm_medico,
 	this.data_dispensa = data_dispensa;
 	this.data_retorno = data_retorno;
 	this.paciente = paciente;
-	this.remedio = remedio;
+	this.medicamento = medicamento;
 }
+
  
 
  

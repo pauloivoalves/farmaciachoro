@@ -7,13 +7,13 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import br.ufc.si.farmacia.hibernate.util.HibernateUtil;
-import br.ufc.si.farmacia.interfaces.IRemedioDAO;
-import br.ufc.si.farmacia.model.Remedio;
+import br.ufc.si.farmacia.interfaces.IMedicamentoDAO;
+import br.ufc.si.farmacia.model.Medicamento;
 
-public class RemedioDAO implements IRemedioDAO {
+public class MedicamentoDAO implements IMedicamentoDAO {
 
 	@Override
-	public void InserirRemedio(Remedio remedio) {
+	public void InserirRemedio(Medicamento remedio) {
 		Session sessao = HibernateUtil.getSession();
 		Transaction txt = sessao.beginTransaction();
 		try {
@@ -27,7 +27,7 @@ public class RemedioDAO implements IRemedioDAO {
 	}// fim do método salvar
 
 	@Override
-	public boolean AtualizarRemedio(Remedio remedio) {
+	public boolean AtualizarRemedio(Medicamento remedio) {
 		Session sessao = HibernateUtil.getSession();
 		Transaction trasaction = sessao.beginTransaction();
 
@@ -45,7 +45,7 @@ public class RemedioDAO implements IRemedioDAO {
 	}// fim do método
 
 	@Override
-	public boolean DeletarRemedio(Remedio remedio) {
+	public boolean DeletarRemedio(Medicamento remedio) {
 		Session sessao = HibernateUtil.getSession();
 		Transaction txt = sessao.beginTransaction();
 
@@ -62,13 +62,13 @@ public class RemedioDAO implements IRemedioDAO {
 	}// fim do método
 
 	@Override
-	public Remedio RemedioPorId(Integer id) {
-		Remedio remedioAuxiliar;
+	public Medicamento RemedioPorId(Integer id) {
+		Medicamento remedioAuxiliar;
 		Session sessao = HibernateUtil.getSession();
 		Transaction txt = sessao.beginTransaction();
 
 		try {
-			remedioAuxiliar = (Remedio) sessao.get(Remedio.class, id);
+			remedioAuxiliar = (Medicamento) sessao.get(Medicamento.class, id);
 			txt.commit();
 			return remedioAuxiliar;
 		} catch (Exception e) {
@@ -81,7 +81,7 @@ public class RemedioDAO implements IRemedioDAO {
 	}// fim do método
 
 	@Override
-	public List<Remedio> ListarTodosRemedios() {
+	public List<Medicamento> ListarTodosRemedios() {
 	
 
 		Session sessao = HibernateUtil.getSession();
