@@ -9,30 +9,38 @@ public class DispensaMedicamentoUnidade {
 	private String tipoSaida;
 	private int qtdSaida;
 	private Date dataDispensa;
-	private Remedio remedio;
+	private Medicamento medicamento;
 	private Unidade unidade;
 	
+	
+	//construtores
 	
 	public DispensaMedicamentoUnidade() {
 		
 	}
 
+
+	
+
+
+
 	public DispensaMedicamentoUnidade(int id, String tipoMedicamento,
-			String tipoSaida, int qtdSaida, Date dataDispensa, Remedio remedio,
-			Unidade unidade) {
+			String tipoSaida, int qtdSaida, Date dataDispensa,
+			Medicamento medicamento, Unidade unidade) {
 		super();
 		this.id = id;
 		this.tipoMedicamento = tipoMedicamento;
 		this.tipoSaida = tipoSaida;
 		this.qtdSaida = qtdSaida;
 		this.dataDispensa = dataDispensa;
-		this.remedio = remedio;
+		this.medicamento = medicamento;
 		this.unidade = unidade;
 	}
 
 
 
 
+//métodos get e set
 
 	public int getId() {
 		return id;
@@ -84,14 +92,21 @@ public class DispensaMedicamentoUnidade {
 	}
 
 
-	public Remedio getRemedio() {
-		return remedio;
+
+	public Medicamento getMedicamento() {
+		return medicamento;
 	}
 
 
-	public void setRemedio(Remedio remedio) {
-		this.remedio = remedio;
+
+
+
+	public void setMedicamento(Medicamento medicamento) {
+		this.medicamento = medicamento;
 	}
+
+
+
 
 
 	public Unidade getUnidade() {

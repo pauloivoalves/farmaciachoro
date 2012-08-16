@@ -14,4 +14,4 @@ public interface IDispensaMedicamentoPacienteDAO {
 	
 	public List<DispensaMedicamentoPaciente> listarTodasAsDispensacoes();
 	
-}
+}//fim da classe

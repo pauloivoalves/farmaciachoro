@@ -2,7 +2,7 @@ package br.ufc.si.farmacia.model;
 
 import java.util.Date;
 
-public class Remedio {
+public class Medicamento {
 
 	private Integer idMedicamento;
 	private String nomeMedicamento;
@@ -28,13 +28,13 @@ public class Remedio {
 		this.valorMedicamento = valorMedicamento;
 	}
 
-	public Remedio() {
+	public Medicamento() {
 
 	}
 
 	
 
-	public Remedio(Integer idMedicamento, String nomeMedicamento,
+	public Medicamento(Integer idMedicamento, String nomeMedicamento,
 			Integer prateleiraMedicamento, String apresentacaoMedicamento,
 			Integer qtdUnidadesPorCaixa, Integer qtdCaixas,
 			Integer totalUnidadesDisponiveis, String loteMedicamento,
@@ -153,4 +153,6 @@ public class Remedio {
 		this.tipoMedicamento = tipoMedicamento;
 	}
 
+	
+	
 }

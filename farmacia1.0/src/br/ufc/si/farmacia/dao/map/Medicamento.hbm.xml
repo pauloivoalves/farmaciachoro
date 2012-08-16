@@ -6,11 +6,11 @@
    
    <hibernate-mapping>
    
-   <class name="br.ufc.si.farmacia.model.Remedio" table="remedio">
+   <class name="br.ufc.si.farmacia.model.Medicamento" table="medicamento">
 		<id name="idMedicamento" column="id_medicamento">
 		     <generator class="identity"></generator>    
 		</id>
-		<property name="nomeMedicamento" column="nome_madicamento"/>
+		<property name="nomeMedicamento" column="nome_medicamento"/>
 		<property name="prateleiraMedicamento" column="prateleira_medicamento"/>
 		<property name="apresentacaoMedicamento" column="apresentacao_medicamento"/>
 		<property name="qtdUnidadesPorCaixa" column="qtd_unidades_por_caixa"/>
