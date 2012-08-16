@@ -10,13 +10,13 @@ import br.ufc.si.farmacia.hibernate.util.HibernateUtil;
 import br.ufc.si.farmacia.interfaces.IDispensaMedicamentoUnidadeDAO;
 import br.ufc.si.farmacia.model.DispensaMedicamentoUnidade;
 
-
-public class DispensaMedicamentoUnidadeDAO implements IDispensaMedicamentoUnidadeDAO{
+public class DispensaMedicamentoUnidadeDAO implements
+		IDispensaMedicamentoUnidadeDAO {
 
 	@Override
 	public void inserirDispensaMedicamentoUnidade(
 			DispensaMedicamentoUnidade dispensacao) {
-		
+
 		Session sessao = HibernateUtil.getSession();
 		Transaction transaction = sessao.beginTransaction();
 
@@ -28,8 +28,7 @@ public class DispensaMedicamentoUnidadeDAO implements IDispensaMedicamentoUnidad
 		} finally {
 			sessao.close();
 		}
-		
-		
+
 	}
 
 	@Override
@@ -38,8 +37,7 @@ public class DispensaMedicamentoUnidadeDAO implements IDispensaMedicamentoUnidad
 
 		Session sessao = HibernateUtil.getSession();
 		Transaction transaction = sessao.beginTransaction();
-	
-		
+
 		try {
 
 			sessao.delete(dispensacao);
@@ -59,20 +57,18 @@ public class DispensaMedicamentoUnidadeDAO implements IDispensaMedicamentoUnidad
 	@Override
 	public boolean atualizarDispensaMedicamentoUnidade(
 			DispensaMedicamentoUnidade dispensacao) {
-		
-		
+
 		Session sessao = HibernateUtil.getSession();
 		Transaction transaction = sessao.beginTransaction();
-		
+
 		try {
 			sessao.update(dispensacao);
 			transaction.commit();
 		} catch (Exception e) {
-			 transaction.rollback();	
-		}finally{
+			transaction.rollback();
+		} finally {
 			sessao.close();
 		}
-				
 
 		return false;
 	}
@@ -94,10 +90,8 @@ public class DispensaMedicamentoUnidadeDAO implements IDispensaMedicamentoUnidad
 			transaction.commit();
 			sessao.close();
 		}
-		
+
 		return null;
 	}
 
-	
-	
 }

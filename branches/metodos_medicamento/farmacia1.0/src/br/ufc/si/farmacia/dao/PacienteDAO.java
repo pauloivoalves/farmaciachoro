@@ -82,7 +82,7 @@ public class PacienteDAO implements IPacienteDAO {
 		}
 
 		return null;
-	}//fim do método buscar por id
+	}// fim do método buscar por id
 
 	@Override
 	public List<Paciente> listaTodosPacientes() {
@@ -102,6 +102,6 @@ public class PacienteDAO implements IPacienteDAO {
 		}
 
 		return null;
-	}//fim do método listar todos os pacientes
+	}// fim do método listar todos os pacientes
 
 }// fim da classe pacienteDAO

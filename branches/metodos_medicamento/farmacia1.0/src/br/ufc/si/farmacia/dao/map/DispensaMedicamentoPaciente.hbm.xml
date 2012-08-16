@@ -24,8 +24,7 @@
    
    <many-to-one name="medicamento" class="br.ufc.si.farmacia.model.Medicamento"
 	column="medicamento_id"/>
-	
-    
+
    </class>
    
    

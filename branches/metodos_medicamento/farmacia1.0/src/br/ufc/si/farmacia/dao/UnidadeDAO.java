@@ -10,7 +10,7 @@ import br.ufc.si.farmacia.hibernate.util.HibernateUtil;
 import br.ufc.si.farmacia.interfaces.IUnidadeDAO;
 import br.ufc.si.farmacia.model.Unidade;
 
-public class UnidadeDAO implements IUnidadeDAO{
+public class UnidadeDAO implements IUnidadeDAO {
 
 	@Override
 	public void salvarUnidade(Unidade unidade) {
@@ -29,8 +29,7 @@ public class UnidadeDAO implements IUnidadeDAO{
 			session.close();
 		}
 
-		
-	}//fim do método salvar
+	}// fim do método salvar
 
 	@Override
 	public boolean atualizarUnidade(Unidade unidade) {
@@ -50,7 +49,7 @@ public class UnidadeDAO implements IUnidadeDAO{
 			session.close();
 		}
 		return false;
-	}//fim do método atualizar
+	}// fim do método atualizar
 
 	@Override
 	public boolean removerUnidade(Unidade unidade) {
@@ -70,22 +69,19 @@ public class UnidadeDAO implements IUnidadeDAO{
 			session.close();
 		}
 
-
 		return false;
-	}//fim do método remover
+	}// fim do método remover
 
 	@Override
 	public List<Unidade> listaTodos() {
 		Session session = HibernateUtil.getSession();
-		try{
-		Criteria criteria = session.createCriteria(Unidade.class);
-		return  criteria.list();
-		}catch (Exception e) {
+		try {
+			Criteria criteria = session.createCriteria(Unidade.class);
+			return criteria.list();
+		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		return null;
 	}
 
-	
-	
-}//fim da classe unidadeDAO
+}// fim da classe unidadeDAO
