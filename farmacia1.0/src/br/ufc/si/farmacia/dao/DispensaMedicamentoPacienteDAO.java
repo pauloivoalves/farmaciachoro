@@ -56,20 +56,19 @@ public class DispensaMedicamentoPacienteDAO implements
 	@Override
 	public boolean atualizarDispensaMedicamentoPaciente(
 			DispensaMedicamentoPaciente dispensacao) {
-		
+
 		Session sessao = HibernateUtil.getSession();
 		Transaction transaction = sessao.beginTransaction();
-		
+
 		try {
 			sessao.update(dispensacao);
 			transaction.commit();
 		} catch (Exception e) {
-			 transaction.rollback();	
-		}finally{
+			transaction.rollback();
+		} finally {
 			sessao.close();
 		}
-				
-				
+
 		return false;
 	}
 
@@ -81,7 +80,8 @@ public class DispensaMedicamentoPacienteDAO implements
 
 		try {
 
-			Query query = sessao.createQuery("from DispensaMedicamentoPaciente");
+			Query query = sessao
+					.createQuery("from DispensaMedicamentoPaciente");
 			return (List<DispensaMedicamentoPaciente>) query.list();
 
 		} catch (Exception e) {
@@ -91,7 +91,6 @@ public class DispensaMedicamentoPacienteDAO implements
 			sessao.close();
 		}
 
-		
 		return null;
 	}
 

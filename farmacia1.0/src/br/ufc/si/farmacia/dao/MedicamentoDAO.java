@@ -45,18 +45,20 @@ public class MedicamentoDAO implements IMedicamentoDAO {
 	}// fim do método
 
 	@Override
-	public boolean DeletarRemedio(Medicamento remedio) {
+	public boolean DeletarRemedio(Medicamento medicamento) {
 		Session sessao = HibernateUtil.getSession();
 		Transaction txt = sessao.beginTransaction();
 
-		try {
-			sessao.delete(remedio);
-			txt.commit();
-			return true;
-		} catch (Exception e) {
-			txt.rollback();
-		} finally {
-			sessao.close();
+		if (medicamento.isJaDispensado() == false) {
+			try {
+				sessao.delete(medicamento);
+				txt.commit();
+				return true;
+			} catch (Exception e) {
+				txt.rollback();
+			} finally {
+				sessao.close();
+			}
 		}
 		return false;
 	}// fim do método
@@ -82,22 +84,17 @@ public class MedicamentoDAO implements IMedicamentoDAO {
 
 	@Override
 	public List<Medicamento> ListarTodosRemedios() {
-	
 
 		Session sessao = HibernateUtil.getSession();
-
 		try {
 
-			Query query =  sessao.createQuery("from Remedio");
+			Query query = sessao.createQuery("from Remedio");
 			return query.list();
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			 sessao.close();
-			
+			sessao.close();
 		}
-
 		return null;
-	}//fim do método
+	}// fim do método
 }// fim da classe

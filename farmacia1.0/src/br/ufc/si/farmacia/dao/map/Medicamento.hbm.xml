@@ -22,7 +22,7 @@
 		<property name="tipoAtencaoMedicamento" column="tipo_atencao_medicamento"/>
 		<property name="tipoMedicamento" column="tipo_medicamento"/>
 		<property name="valorMedicamento" column="valor_medicamento"/>
-		
+		<property name = "jaDispensado" column= "jadispensado"/>
 		
 	</class>
    
