@@ -17,7 +17,7 @@
    <property name="qtdSaida" column="qtd_saida"></property>
    <property name="dataDispensa" column="data_dispensa"></property>
    
-   <many-to-one name="remedio" class="br.ufc.si.farmacia.model.Remedio"
+   <many-to-one name="medicamento" class="br.ufc.si.farmacia.model.Medicamento"
 	column="medicamento_id"/> 
    
     <many-to-one name="unidade" class="br.ufc.si.farmacia.model.Unidade"
