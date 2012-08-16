@@ -16,13 +16,13 @@
    <property name="tipo_medicamento" column="tipo_medicamento"></property>
    <property name="tipo_saida" column="tipo_saida"></property>
    <property name="quant_saida" column="qtd_saida"></property>
-   <property name="data_dispensa" column="data_dispena"></property>
+   <property name="data_dispensa" column="data_dispensa"></property>
    <property name="data_retorno" column="data_retorno"></property>
      
    <many-to-one name="paciente" class="br.ufc.si.farmacia.model.Paciente"
 	column="paciente_id"/>
    
-   <many-to-one name="remedio" class="br.ufc.si.farmacia.model.Remedio"
+   <many-to-one name="medicamento" class="br.ufc.si.farmacia.model.Medicamento"
 	column="medicamento_id"/>
 	
     
