@@ -14,4 +14,12 @@ public interface IMedicamentoDAO {
 	public Medicamento RemedioPorId(Integer id);
 
 	public List<Medicamento> ListarTodosRemedios();
+	
+	public List<Medicamento>ListarMedicamentosAindaEmEstoque();
+	
+	public List<Medicamento>ListarMedicamentosDispensados();
+	
+	public List<Medicamento> ListarMedicamentosVencidos();
+	
+	public List<Medicamento> ListarMedicamentosQueVenceraoNoMes();
 }
