@@ -39,13 +39,14 @@ public class Medicamento {
 
 	}
 
+		
 	public Medicamento(Integer idMedicamento, String nomeMedicamento,
 			Integer prateleiraMedicamento, String apresentacaoMedicamento,
 			Integer qtdUnidadesPorCaixa, Integer qtdCaixas,
 			Integer totalUnidadesDisponiveis, String loteMedicamento,
 			Date validadeMedicamento, String notaFiscalMedicamento,
 			String tipoAtencaoMedicamento, String tipoMedicamento,
-			double valorMedicamento) {
+			double valorMedicamento, boolean jaDispensado) {
 		super();
 		this.idMedicamento = idMedicamento;
 		this.nomeMedicamento = nomeMedicamento;
@@ -60,6 +61,7 @@ public class Medicamento {
 		this.tipoAtencaoMedicamento = tipoAtencaoMedicamento;
 		this.tipoMedicamento = tipoMedicamento;
 		this.valorMedicamento = valorMedicamento;
+		this.jaDispensado = jaDispensado;
 	}
 
 	public Integer getIdMedicamento() {

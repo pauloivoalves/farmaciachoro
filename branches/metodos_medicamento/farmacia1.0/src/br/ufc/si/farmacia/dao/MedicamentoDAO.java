@@ -1,10 +1,14 @@
 package br.ufc.si.farmacia.dao;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 import br.ufc.si.farmacia.hibernate.util.HibernateUtil;
 import br.ufc.si.farmacia.interfaces.IMedicamentoDAO;
@@ -97,4 +101,95 @@ public class MedicamentoDAO implements IMedicamentoDAO {
 		}
 		return null;
 	}// fim do método
+
+	@Override
+	public List<Medicamento> ListarMedicamentosAindaEmEstoque() {
+
+		Session sessao = HibernateUtil.getSession();
+
+		try {
+
+			Query query = sessao
+					.createQuery("from Medicamento med where med.totalUnidadesDisponiveis > :qtd");
+			query.setInteger("qtd", 0);
+			return query.list();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sessao.close();
+
+		}
+
+		return null;
+
+	}
+
+	@Override
+	public List<Medicamento> ListarMedicamentosDispensados() {
+
+		Session sessao = HibernateUtil.getSession();
+
+		try {
+
+			// List<Medicamento> lista;
+
+			Criteria c = sessao.createCriteria(Medicamento.class);
+			c.add(Restrictions.eq("jaDispensado", true));
+
+			return (List<Medicamento>) c.list();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sessao.close();
+
+		}
+
+		return null;
+
+	}
+
+	public List<Medicamento> ListarMedicamentosQueVenceraoNoMes() {
+		
+		Date date = new Date();
+		List<Medicamento> medicamentos = new ArrayList<Medicamento>();
+		List<Medicamento> medicamentoAux;
+
+		Session session = HibernateUtil.getSession();
+		Criteria criteria = session.createCriteria(Medicamento.class);
+		
+		
+		medicamentoAux = criteria.list();
+		for (Medicamento r : medicamentoAux) {
+			int aux = r.getValidadeMedicamento().getMonth();
+			int aux2 = r.getValidadeMedicamento().getYear();
+			if (aux == date.getMonth() && aux2 == date.getYear()) {
+				medicamentos.add(r);
+			}
+		}
+		session.close();
+
+		return medicamentos;
+	}
+
+	public List<Medicamento> ListarMedicamentosVencidos() {
+		
+		Date date = new Date();
+		List<Medicamento> medicamentoAux;
+		List<Medicamento> medicamentos = new ArrayList<Medicamento>();
+		
+		Session session = HibernateUtil.getSession();
+		Criteria criteria = session.createCriteria(Medicamento.class);
+		
+		medicamentoAux = criteria.list();
+		for (Medicamento r : medicamentoAux) {
+			if (r.getValidadeMedicamento().before(date)) {
+				medicamentos.add(r);
+			}
+		}
+
+		return medicamentos;
+	}
+
 }// fim da classe
