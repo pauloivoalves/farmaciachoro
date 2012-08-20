@@ -17,8 +17,15 @@ public class Medicamento {
 	private String tipoAtencaoMedicamento;
 	private String tipoMedicamento;
 	private double valorMedicamento;
-	
-	
+	private boolean jaDispensado;
+
+	public boolean isJaDispensado() {
+		return jaDispensado;
+	}
+
+	public void setJaDispensado(boolean jaDispensado) {
+		this.jaDispensado = jaDispensado;
+	}
 
 	public double getValorMedicamento() {
 		return valorMedicamento;
@@ -31,8 +38,6 @@ public class Medicamento {
 	public Medicamento() {
 
 	}
-
-	
 
 	public Medicamento(Integer idMedicamento, String nomeMedicamento,
 			Integer prateleiraMedicamento, String apresentacaoMedicamento,
@@ -153,6 +158,4 @@ public class Medicamento {
 		this.tipoMedicamento = tipoMedicamento;
 	}
 
-	
-	
 }
